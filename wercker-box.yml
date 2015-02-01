@@ -1,9 +1,12 @@
-name : tablelist-node
-version : 1.0.0
-type : main
-platform : ubuntu@14.04
-packages :
+name: tablelist-node
+version: 1.0.0
+inherits: wercker/ubuntu12.04-webessentials@1.0.4
+type: main
+platform: ubuntu@14.04
+packages:
   - nodejs@0.10.36
+description: |
+  Wercker box with Ubuntu 14.04 and Node.js 0.10.36
 keywords:
   - nodejs
   - ubuntu
