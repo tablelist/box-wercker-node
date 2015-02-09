@@ -4,13 +4,15 @@ inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type: main
 platform: ubuntu@14.04
 packages:
-  - nodejs@0.10.36
+  - nodejs@0.12.0
 description: |
-  Wercker box with Ubuntu 14.04 and Node.js 0.10.36
+  Wercker box with Ubuntu 14.04 and Node.js 0.12.0
 keywords:
   - nodejs
-  - nodejs 0.10.36
+  - 0.12
+  - nodejs 0.12
   - ubuntu
+  - 14.04
   - ubuntu 14.04
   - wercker
   - webessentials
