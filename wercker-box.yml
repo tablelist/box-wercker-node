@@ -1,22 +1,47 @@
 name: tablelist-node
-version: 2.0.1
+version: 2.1.0
 inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type: main
 platform: ubuntu@14.04
 packages:
   - nodejs@0.12.0
 description: |
-  Wercker box with Ubuntu 14.04 and Node.js 0.12.0
+  Wercker box with Node.js 0.12.0 and MongoDB 3.0.0 running on Ubuntu 14.04
 keywords:
+  - node
   - nodejs
+  - node.js
   - 0.12
   - nodejs 0.12
+  - node.js 0.12
+  - mongo
+  - mongodb
+  - mongodb 3.0.0
   - ubuntu
   - 14.04
   - ubuntu 14.04
   - wercker
   - webessentials
 script: |
+  
+  #### Init
+  sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
+  sudo apt-get update
+  sudo apt-get install wget build-essential
+  sudo apt-get install gcc-4.8
+  sudo apt-get install g++-4.8
+  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 20
+  sudo apt-get update
+  sudo apt-get upgrade -y
+  sudo apt-get dist-upgrade
+
+  #### MongoDB
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+  echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+  sudo apt-get update
+  sudo apt-get install -y mongodb-org
+
+  #### Node.js
   export NODEVERSION=0.12.0
   sudo apt-get update
   sudo apt-get install wget build-essential
