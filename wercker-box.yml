@@ -6,7 +6,7 @@ platform: ubuntu@14.04
 packages:
   - nodejs@0.12.0
 description: |
-  Wercker box with Node.js 0.12.0 and MongoDB 3.0.0 running on Ubuntu 14.04
+  Wercker box with Node.js 0.12.0 running on Ubuntu 14.04
 keywords:
   - node
   - nodejs
@@ -14,9 +14,6 @@ keywords:
   - 0.12
   - nodejs 0.12
   - node.js 0.12
-  - mongo
-  - mongodb
-  - mongodb 3.0.0
   - ubuntu
   - 14.04
   - ubuntu 14.04
@@ -34,12 +31,6 @@ script: |
   sudo apt-get update
   sudo apt-get upgrade -y
   sudo apt-get dist-upgrade
-
-  #### MongoDB
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-  echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-  sudo apt-get update
-  sudo apt-get install -y mongodb-org
 
   #### Node.js
   export NODEVERSION=0.12.0
