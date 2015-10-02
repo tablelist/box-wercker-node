@@ -1,12 +1,12 @@
 name: tablelist-node
-version: 2.3.0
+version: 4.1.1
 inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type: main
 platform: ubuntu@14.04
 packages:
-  - nodejs@0.12.3
+  - nodejs@4.1.1
 description: |
-  Wercker box with Node.js 0.12.3 running on Ubuntu 14.04
+  Wercker box with Node.js 4.1.1 running on Ubuntu 14.04
 keywords:
   - node
   - nodejs
@@ -20,7 +20,7 @@ keywords:
   - wercker
   - webessentials
 script: |
-  
+
   #### Init
   sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
   sudo apt-get update
@@ -33,7 +33,7 @@ script: |
   sudo apt-get dist-upgrade
 
   #### Node.js
-  export NODEVERSION=0.12.3
+  export NODEVERSION=4.1.1
   sudo apt-get update
   sudo apt-get install wget build-essential
   cd $HOME
